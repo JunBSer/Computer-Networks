@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-const maxWorkers = 2000
+const maxWorkers = 200
 
 func findOpenedPorts(ipAddr string) []string {
 	var openedPorts []string
@@ -76,7 +76,7 @@ func main() {
 	}
 	wg.Wait()
 
-	time.Sleep(3 * time.Second)
+	time.Sleep(5 * time.Second)
 
 	parsedArp, err := ParseARPTable(iFaceNet.IP.To4().String())
 	if err != nil {
